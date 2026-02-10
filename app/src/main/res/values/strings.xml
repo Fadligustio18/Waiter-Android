@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FirshApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button">Button</string>
+    <string name="nama_makanan">Nama Makanan</string>
+    <string name="harga">Harga</string>
+    <string name="tambah">Tambah</string>
+    <string name="kurang">Kurang</string>
+</resources>

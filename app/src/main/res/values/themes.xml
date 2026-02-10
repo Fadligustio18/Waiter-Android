@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.FirshApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- Atur style default untuk ImageButton di seluruh aplikasi -->
+        <item name="imageButtonStyle">@style/App.ImageButton</item>
+    </style>
+
+    <style name="Theme.FirshApp" parent="Base.Theme.FirshApp" />
+
+    <!-- Style kustom untuk ImageButton untuk menghapus tint bawaan -->
+    <style name="App.ImageButton" parent="Widget.Material3.Button.Icon">
+        <item name="tint">@null</item>
+    </style>
+</resources>

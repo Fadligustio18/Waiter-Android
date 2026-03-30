@@ -25,7 +25,7 @@
         android:layout_marginTop="35dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="sans-serif-black"
-        android:text="Explore Your Favorite "
+        android:text="@string/explore_your_favorite"
         android:textColor="#F44336"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/imageView4"
@@ -38,12 +38,13 @@
         android:layout_height="22dp"
 
         android:layout_marginEnd="15dp"
+        android:importantForAccessibility="no"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView"
         app:srcCompat="@drawable/img_5" />
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView3"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"

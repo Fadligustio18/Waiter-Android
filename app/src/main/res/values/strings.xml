@@ -5,7 +5,22 @@
     <string name="button">Button</string>
     <string name="nama_makanan">Nama Makanan</string>
     <string name="harga">Harga</string>
+    <string name="judul">Hot Dog</string>
     <string name="tambah">Tambah</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
     <string name="kurang">Kurang</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="tersedia">Tersedia</string>
+    <string name="nomer">1</string>
+    <string name="signin">Sign In</string>
+    <string name="signup">Sign Up</string>
+    <string name="deslogin">Silakan Login untuk melanjutkan</string>
+    <string name="name">Food name</string>
+    <string name="price">harga</string>
+    <string name="addcart">Add Cart</string>
+    <string name="todo">TODO</string>
     <string name="explore_your_favorite">Explore Your Favorite</string>
+    <string name="search">Apa yang mau anda cari?</string>
 </resources>

@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bagel_fat_one"
-        android:text="Hot Dog"
+        android:text="@string/judul"
         android:textColor="#F44336"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"

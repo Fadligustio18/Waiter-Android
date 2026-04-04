@@ -13,6 +13,7 @@ class Screen : AppCompatActivity() {
         setContentView(R.layout.activity_screen)
 
         Handler(Looper.getMainLooper()).postDelayed({
+            // Kembali ke MainActivity sebagai halaman utama setelah splash
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()

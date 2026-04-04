@@ -14,9 +14,7 @@
         android:id="@+id/searchFragment"
         android:icon="@drawable/img_3"/>
 
-    <item android:title="History"
-        android:id="@+id/historyFragment"
-        android:icon="@drawable/img_2"/>
+
 
     <item android:title="Profile"
         android:id="@+id/profilFragment"

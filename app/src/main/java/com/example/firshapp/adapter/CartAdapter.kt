@@ -7,9 +7,11 @@ import com.example.firshapp.databinding.CartItemBinding
 import com.example.firshapp.model.Item
 
 class CartAdapter(
-    private val items: List<Item>,
-    private val onDeleteClick: (Item) -> Unit
+    private val cartItems: List<Item>,
+    private val onDeleteClickListener: (Item) -> Unit
 ) : RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
+
+    private val itemQuantities = IntArray(cartItems.size) { 1 }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
         val binding = CartItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -17,19 +19,47 @@ class CartAdapter(
     }
 
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
-        holder.bind(items[position])
+        holder.bind(position)
     }
 
-    override fun getItemCount(): Int = items.size
+    override fun getItemCount(): Int = cartItems.size
 
     inner class CartViewHolder(private val binding: CartItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: Item) {
-            binding.cartFood.text = item.name
-            binding.cartPrice.text = item.harga.toString()
-            binding.cartDeskripsi.text = item.deskripsi
-            binding.cartTersedia.text = if (item.isAvaible) "Tersedia" else "Tidak Tersedia"
-            binding.cartItemQuantity.text = "1" // Default quantity
-            binding.deletebtn.setOnClickListener { onDeleteClick(item) }
+        fun bind(position: Int) {
+            val item = cartItems[position]
+            binding.apply {
+                val quantity = itemQuantities[position]
+                cartFood.text = item.name
+                cartPrice.text = item.harga.toString()
+                cartDeskripsi.text = item.deskripsi
+                cartTersedia.text = if (item.isAvaible) "Tersedia" else "Tidak Tersedia"
+                
+                cartItemQuantity.text = quantity.toString()
+
+                minbtn.setOnClickListener {
+                    decreaseQuantity(position)
+                }
+                plusbtn.setOnClickListener {
+                    increaseQuantity(position)
+                }
+                deletebtn.setOnClickListener {
+                    onDeleteClickListener(item)
+                }
+            }
+        }
+
+        private fun decreaseQuantity(position: Int) {
+            if (itemQuantities[position] > 1) {
+                itemQuantities[position]--
+                binding.cartItemQuantity.text = itemQuantities[position].toString()
+            }
+        }
+
+        private fun increaseQuantity(position: Int) {
+            if (itemQuantities[position] < 10) {
+                itemQuantities[position]++
+                binding.cartItemQuantity.text = itemQuantities[position].toString()
+            }
         }
     }
 }
